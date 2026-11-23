@@ -1,0 +1,21 @@
+{
+  "numBlocks": 6,
+  "events": [
+    { "type": "add_request", "request": "r1", "blocks": [0, 1] },
+    { "type": "share", "request": "r2", "from": "r1", "count": 2 },
+    { "type": "begin_read", "request": "r2", "index": 0 },
+    { "type": "cancel", "request": "r1" },
+    { "type": "cancel", "request": "r2" },
+    { "type": "reclaim", "block": 0 },
+    { "type": "end_read", "request": "r2", "index": 0 },
+    { "type": "reclaim", "block": 0 },
+    { "type": "reclaim", "block": 0 },
+    { "type": "add_request", "request": "r3", "blocks": [2] },
+    { "type": "share", "request": "r4", "from": "r3", "count": 1 },
+    { "type": "write", "request": "r3", "index": 0, "content": "x" },
+    { "type": "write", "request": "r3", "index": 0, "cow": true, "into": "r4", "content": "y" },
+    { "type": "write", "request": "r3", "index": 0, "cow": true, "content": "z" },
+    { "type": "finish", "request": "r3" },
+    { "type": "finish", "request": "r4" }
+  ]
+}

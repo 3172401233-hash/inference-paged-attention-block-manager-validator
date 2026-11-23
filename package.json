@@ -1,0 +1,14 @@
+{
+  "name": "inference-paged-attention-block-manager-validator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "验证分页注意力块表、共享页和回收竞争（纯 CPU 侧元数据模拟，不访问 GPU）",
+  "main": "src/simulate.js",
+  "scripts": {
+    "test": "node --test",
+    "validate": "node bin/validate.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
